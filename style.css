@@ -1,0 +1,19 @@
+.sound-item{
+
+        float:left;
+        width:calc(50% - 20px);
+        max-width:200px;
+        height:100px;
+        margin:10px;
+        cursor:pointer;
+        background: #638;
+
+}
+
+.stop-sound{
+        float:right;
+        background: rgba(139, 139, 139, 0.3);
+        height:100px;
+        width:100px;
+        z-index:999;
+}
