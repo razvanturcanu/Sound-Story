@@ -9,15 +9,33 @@ function playSound(elem){
     sound.volume = 1;
     sound.currentTime = 0;
     sound.play();
-    $(sound).addClass("playing");
+    
+    clickedElem.addClass("playing");
+
+    
 
 }
 
 
-function stopSound(){
+function stopSound(elem){
+    
     event.stopPropagation()
-    var clickedElem = $(this);
-    clickedElem.parent().find(".playing").trigger("stoped");
+    var clickedElem = $(elem);
+    clickedElem.trigger("stoped");
+
+    var sound = clickedElem.parent().find("audio")[0];
+    
+    sound.pause();
+    sound.currentTime = 0;
+    $(sound).parent().removeClass("playing");
+
+
+}
+
+
+function hideStopButton(elem){
+    $(elem).closest(".sound-item").removeClass("playing");
+
 }
 
 
@@ -50,18 +68,10 @@ sounds.forEach(function(item, index){
     var bk_src = "sounds/animals/" + item.file.replace(".mp3",".jpg");
 
     var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
-                            "<div class='stop-sound' onclick='stopSound()'></div>" +
-                            "<audio><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
+                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
+                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
                     "</div>").appendTo("body");
 
-    soundItem.find("audio").bind('ended stoped', function(){
-        
-        var sound = this;
-        sound.pause();
-        sound.currentTime = 0;
-        $(sound).parent().find(".playing").removeClass("playing");
-    
-    })
 
 })
 
@@ -72,18 +82,10 @@ effects.forEach(function(item, index){
     var bk_src = "sounds/effects/" + item.file.replace(".mp3",".jpg");
 
     var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
-                            "<div class='stop-sound' onclick='stopSound()'></div>" +
-                            "<audio><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
+                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
+                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
                     "</div>").appendTo("body");
 
-    soundItem.find("audio").bind('ended stoped', function(){
-        
-        var sound = this;
-        sound.pause();
-        sound.currentTime = 0;
-        $(sound).parent().find(".playing").removeClass("playing");
-    
-    })
 
 })
 
