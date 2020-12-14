@@ -2,7 +2,6 @@
 var sounds = [
     
     {  "file": "birds-1.mp3" },
-    {  "file": "door-bell.mp3"},
     {  "file": "crow.mp3" },
     {  "file": "duck.mp3"},
     {  "file": "elephant.mp3" },
@@ -21,6 +20,7 @@ var sounds = [
 
 var effects = [
     
+    {  "file": "door-bell.mp3"},
     {  "file": "arena-organ.mp3" },
     {  "file": "bad-boys.mp3"},
     {  "file": "censored.mp3" },
