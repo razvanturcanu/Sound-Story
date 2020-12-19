@@ -1475,7 +1475,7 @@
                 if (dragging.delta < 0) {
         
                   var nextItem = items[rel.activeItem + 1];
-                    debugger
+                    
                   if (Math.abs(dragging.delta) >= nextItem.size) {
                     dragging.delta = -nextItem.size;
                   }
@@ -1484,7 +1484,7 @@
                 else {
         
                   var prevItem = items[rel.activeItem - 1];
-                    debugger
+                    
                   if (Math.abs(dragging.delta) >= prevItem.size) {
                     dragging.delta = prevItem.size;
                   }
