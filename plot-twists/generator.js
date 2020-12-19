@@ -62,7 +62,7 @@ function randomize(elem){
 
 
 // create sound items from sounds/animals
-sounds.forEach(function(item, index){ 
+animals.forEach(function(item, index){ 
 
     var sound_src = "sounds/animals/" + item.file;
     var bk_src = "sounds/animals/" + item.file.replace(".mp3",".jpg");
@@ -71,7 +71,6 @@ sounds.forEach(function(item, index){
                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +
                             "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
                     "</div>").appendTo("#animals");
-
 
 })
 
@@ -85,6 +84,20 @@ effects.forEach(function(item, index){
                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +
                             "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
                     "</div>").appendTo("#effects");
+
+
+})
+
+// create sound items from sounds/ambient
+music_clips.forEach(function(item, index){ 
+
+    var sound_src = "sounds/music-clips/" + item.file;
+    var bk_src = "sounds/music-clips/" + item.file.replace(".mp3",".jpg");
+
+    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
+                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
+                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
+                    "</div>").appendTo("#music-clips");
 
 
 })
