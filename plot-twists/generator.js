@@ -70,7 +70,7 @@ sounds.forEach(function(item, index){
     var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")' data-file-name='" + item.file + "'>" + 
                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +
                             "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("body");
+                    "</div>").appendTo("#animals");
 
 
 })
@@ -84,7 +84,7 @@ effects.forEach(function(item, index){
     var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +
                             "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("body");
+                    "</div>").appendTo("#effects");
 
 
 })
@@ -98,7 +98,7 @@ ambient.forEach(function(item, index){
     var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +
                             "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("body");
+                    "</div>").appendTo("#ambient");
 
 
 })

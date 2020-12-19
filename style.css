@@ -1,3 +1,13 @@
+
+html, body{
+        height:100%;
+        width:100%;
+        padding:0;
+        margin:0;
+        position:relative;
+}
+
+
 .sound-item{
 
         float:left;
@@ -14,6 +24,27 @@
         box-shadow: 0 1px 1px 0 rgba(22,62,89,.1);
         overflow:hidden;
 
+}
+
+#frame{
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        touch-action: manipulation;
+}
+
+.slides{
+      height:100%;  
+}
+
+#frame .slides .slidee{
+        position:relative;
+        height:100%;
+        float:left;
+        overflow-y:auto;
+        width:100vw !important;
 }
 
 /* .sound-item:after{

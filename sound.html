@@ -19,19 +19,63 @@
 	<body>
 			
 
-		<div id="plot-twist" class="generator" onclick="randomize(this)">
+		<div id="frame">
+			<div class="slides">
+				<div class="slidee" id="animals"></div>
+				<div class="slidee" id="effects"></div>
+				<div class="slidee" id="ambient"></div>
+			</div>
+		</div>
+
+
+		<!-- <div id="plot-twist" class="generator" onclick="randomize(this)">
 			<div class="prompter">generate!</div>
 			<select class="hidden"></select>
-		</div>
+		</div> -->
 
 
 		<!-- js -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="http://darsain.github.io/sly/js/sly.min.js"></script>
 		<script src="js.js"></script>
 
 		<script src="plot-twists/plot-twist-data.js"></script>
 		<script src="sounds/data.js"></script>
 		<script src="plot-twists/generator.js"></script>
+
+		<script>
+			var options = {
+				horizontal: 1,
+				itemNav: 'forceCentered',
+				smart: 1,
+				activateMiddle: 1,
+				mouseDragging: 1,
+				touchDragging: 1,
+				releaseSwing: 1,
+				startAt: 0,
+				//scrollBar: $wrap.find('.scrollbar'),
+				scrollBy: 1,
+				speed: 300,
+				elasticBounds: 1,
+				//easing: 'easeOutExpo',
+				dragHandle: 1,
+				dynamicHandle: 1,
+				clickBar: 1,
+			};
+			var frame = new Sly('#frame', options)
+			
+			// frame.on('change', function(eventName){
+
+			// 	var slide = $(".slides");
+			// 	var clone = $(slide).find('li').first().html();
+			// 	$(slide).append('<li>'+ clone + '</li>');
+			// 	$(slide).find('li').first().remove();
+			// 	this.slideTo(1);
+			// });
+			
+			
+			frame.init();
+		</script>
 
 
 	</body>
