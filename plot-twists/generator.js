@@ -67,7 +67,7 @@ sounds.forEach(function(item, index){
     var sound_src = "sounds/animals/" + item.file;
     var bk_src = "sounds/animals/" + item.file.replace(".mp3",".jpg");
 
-    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
+    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")' data-file-name='" + item.file + "'>" + 
                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +
                             "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
                     "</div>").appendTo("body");
@@ -80,6 +80,20 @@ effects.forEach(function(item, index){
 
     var sound_src = "sounds/effects/" + item.file;
     var bk_src = "sounds/effects/" + item.file.replace(".mp3",".jpg");
+
+    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
+                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
+                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
+                    "</div>").appendTo("body");
+
+
+})
+
+// create sound items from sounds/ambient
+ambient.forEach(function(item, index){ 
+
+    var sound_src = "sounds/ambient/" + item.file;
+    var bk_src = "sounds/ambient/" + item.file.replace(".mp3",".jpg");
 
     var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +

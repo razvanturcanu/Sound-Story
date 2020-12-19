@@ -16,6 +16,15 @@ var sounds = [
     {  "file": "zebra.mp3" },
     {  "file": "cow.mp3" },
 
+    {  "file": "aligator.mp3" },
+    {  "file": "bats.mp3" },
+    {  "file": "bee.mp3" },
+    {  "file": "cat.mp3" },
+    {  "file": "small-dog.mp3" },
+
+
+
+
 ]
 
 var effects = [
@@ -35,6 +44,27 @@ var effects = [
 
     {  "file": "school-bell.mp3" },
     {  "file": "youll-regret-that.mp3" },
+
+    {  "file": "bonk.mp3" },
+    {  "file": "crash-1.mp3" },
+    {  "file": "crash-2.mp3" },
+    {  "file": "crowd-shock.mp3" },
+    {  "file": "horn.mp3" },
+
+    {  "file": "jetsons-doorbell.mp3" },
+    {  "file": "police.mp3" },
+    {  "file": "tip-toe.mp3" },
+    {  "file": "zipscramble.mp3" },
+
+
+]
+
+
+var ambient = [
+    
+    {  "file": "forest.mp3"},
+    {  "file": "river.mp3" },
+
 
 ]
 

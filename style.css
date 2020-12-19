@@ -16,6 +16,13 @@
 
 }
 
+/* .sound-item:after{
+        content:attr(data-file-name);
+        position:relative;
+        top:2px;
+} */
+
+
 
 .stop-sound{
         position:absolute;
