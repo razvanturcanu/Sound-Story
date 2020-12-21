@@ -60,75 +60,61 @@ function randomize(elem){
 }
 
 
+ SoundList.prototype.createSounds = function (relativePath, appendTo) {
+    
+    var jsonObj = this;
+    var soundsArray = this.array;
 
-// create sound items from sounds/animals
-animals.forEach(function(item, index){ 
+    soundsArray.forEach( function(item, index){ 
 
-    var sound_src = "sounds/animals/" + item.file;
-    var bk_src = "sounds/animals/" + item.file.replace(".mp3",".jpg");
+        var sound_src = "sounds/" + relativePath + "/" + item.file;
+        var bk_src = "sounds/" + relativePath + "/" + item.file.replace(".mp3",".jpg");
+    
+        var sizeClass = item.size != undefined ?  item.size :
+                        jsonObj.size != undefined ?  jsonObj.size : "sm";
 
-    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")' data-file-name='" + item.file + "'>" + 
-                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
-                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("#animals");
-
-})
-
-// create sound items from sounds/effects
-effects.forEach(function(item, index){ 
-
-    var sound_src = "sounds/effects/" + item.file;
-    var bk_src = "sounds/effects/" + item.file.replace(".mp3",".jpg");
-
-    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
-                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
-                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("#effects");
+        var soundItem = $("<div class='sound-item " + sizeClass + "' onclick='playSound(this)' style='background-image:url(" + bk_src + ")' data-file-name='" + item.file + "'>" + 
+                                "<div class='stop-sound' onclick='stopSound(this)'></div>" +
+                                "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
+                        "</div>").appendTo(appendTo);
 
 
-})
+    })
 
-// create sound items from sounds/ambient
-music_clips.forEach(function(item, index){ 
-
-    var sound_src = "sounds/music-clips/" + item.file;
-    var bk_src = "sounds/music-clips/" + item.file.replace(".mp3",".jpg");
-
-    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
-                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
-                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("#music-clips");
+}
 
 
-})
-
-// create sound items from sounds/ambient
-ambient.forEach(function(item, index){ 
-
-    var sound_src = "sounds/ambient/" + item.file;
-    var bk_src = "sounds/ambient/" + item.file.replace(".mp3",".jpg");
-
-    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
-                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
-                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("#ambient");
 
 
-})
-
-// create sound items from sounds/ambient
-colinde.forEach(function(item, index){ 
-
-    var sound_src = "sounds/colinde/" + item.file;
-    var bk_src = "sounds/colinde/" + item.file.replace(".mp3",".jpg");
-
-    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
-                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
-                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
-                    "</div>").appendTo("#colinde");
+animals.createSounds("animals", $("#animals"));
+effects.createSounds("effects", $("#effects"));
+music_clips.createSounds("music-clips", $("#music-clips"));
+ambient.createSounds("ambient", $("#ambient"));
+colinde.createSounds("colinde", $("#colinde"));
 
 
-})
+
+// effects.forEach( function(item, index){ createSoundItem(item, index, "effects", $("#effects")) })
+// music_clips.forEach( function(item, index){ createSoundItem(item, index, "music-clips", $("#music-clips")) })
+// ambient.forEach( function(item, index){ createSoundItem(item, index, "ambient", $("#ambient")) })
+// colinde.forEach( function(item, index){ createSoundItem(item, index, "colinde", $("#colinde")) })
+
+
+// function createSoundItem(item, index, url, appendToElment){
+
+//     var sound_src = "sounds/" + url + "/" + item.file;
+//     var bk_src = "sounds/" + url + "/" + item.file.replace(".mp3",".jpg");
+
+//     var sizeClass = item.size != undefined ?  item.size : "sm";
+//     debugger
+//     var soundItem = $("<div class='sound-item " + sizeClass + "' onclick='playSound(this)' style='background-image:url(" + bk_src + ")' data-file-name='" + item.file + "'>" + 
+//                             "<div class='stop-sound' onclick='stopSound(this)'></div>" +
+//                             "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
+//                     "</div>").appendTo(appendToElment);
+
+// }
+
+
 
 
 
