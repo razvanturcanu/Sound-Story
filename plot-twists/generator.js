@@ -116,6 +116,20 @@ ambient.forEach(function(item, index){
 
 })
 
+// create sound items from sounds/ambient
+colinde.forEach(function(item, index){ 
+
+    var sound_src = "sounds/colinde/" + item.file;
+    var bk_src = "sounds/colinde/" + item.file.replace(".mp3",".jpg");
+
+    var soundItem = $("<div class='sound-item' onclick='playSound(this)' style='background-image:url(" + bk_src + ")'>" + 
+                            "<div class='stop-sound' onclick='stopSound(this)'></div>" +
+                            "<audio onended='hideStopButton(this)'><source src='" + sound_src + "' type='audio/mpeg'></audio>"+
+                    "</div>").appendTo("#colinde");
+
+
+})
+
 
 
 

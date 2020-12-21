@@ -92,3 +92,17 @@ var ambient = [
 
 ]
 
+var colinde = [
+    
+    {  "file": "astazi-sa-nascut-hristos.mp3"},
+    {  "file": "domn-domn.mp3" },
+    {  "file": "elefantul-cici.mp3"},
+    {  "file": "in-padurea-cu-alune.mp3" },
+
+    {  "file": "mos-craciun-cu-plete-dalbe.mp3"},
+    {  "file": "saniuta-fuge.mp3" },
+    {  "file": "steaua-sus-rasare.mp3"},
+ 
+
+]
+
